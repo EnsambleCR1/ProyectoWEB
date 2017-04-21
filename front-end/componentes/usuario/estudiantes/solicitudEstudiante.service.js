@@ -14,11 +14,10 @@
 
     function _setSolicitudEstudiantes(nuevoEstudiante){
       solicitudEstudiantes.push(nuevoEstudiante);
-      localStorage.setItem('mSolicitudEstudiantesLocal',JSON.stringify(solicitudEstudiantes));
+      console.log('Estudiante guardado');
     }
 
     function _getSolicitudEstudiantes(){
-      var solicitudEstLocal = JSON.parse(localStorage.getItem('mSolicitudEstudiantesLocal'));
       return solicitudEstudiantes;
     }
   }

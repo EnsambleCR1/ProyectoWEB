@@ -2,14 +2,14 @@
   angular
     .module('myEnsamble')
     .controller('estadoEstudianteController', estadoEstudianteController);
-    function estadoEstudianteController(estadoEstudianteService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function estadoEstudianteController(administradorService){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var estadoEstudianteCtrl = this; //binding del controlador con el html, solo en el controlador
 
 
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
-       estadoEstudianteCtrl.proyectos = estadoEstudianteService.getEstadoEstudiante();
-       // estadoEstudianteCtrl.cambios = estadoEstudianteService.getCambios();
+       estadoEstudianteCtrl.estadoEstudiante = administradorService.getEstadoEstudiante();
+       // estadoEstudianteCtrl.cambios = administradorService.getCambios();
 
       }init();
 
@@ -27,20 +27,20 @@
           estado : 'pendiente'
 
         }
-        estadoEstudianteService.setProyectos(newProyectos);
+        administradorService.setProyectos(newProyectos);
         console.log(newProyectos);
       }
 
       estadoEstudianteCtrl.aceptar = function(pobjProyecto){
         console.log(pobjProyecto);
         pobjProyecto.estado = 'aceptado';
-        estadoEstudianteService.setSolicitudAceptado(pobjProyecto);
+        administradorService.setSolicitudAceptado(pobjProyecto);
         // verProyectoService.setAceptado(pobjProyecto);
       }
       estadoEstudianteCtrl.rechazado = function(pobjProyecto){
         //console.log(pobjProyecto);
         pobjProyecto.estado = 'rechazado';
-        estadoEstudianteService.setSolicitudRechazado(pobjProyecto);
+        administradorService.setSolicitudRechazado(pobjProyecto);
       }
       // estadoEstudianteCtrl.guardarCambios = function(pobjProyecto){
       //   var newBitacora = {
@@ -51,7 +51,7 @@
       //     industria : estadoEstudianteCtrl.industria
       //   }
       //   pobjProyecto.bitacoras.push( newBitacora);
-      //   estadoEstudianteService.setCambios(pobjProyecto);
+      //   administradorService.setCambios(pobjProyecto);
       //   console.log(newBitacora);
       // }
     }

@@ -1,0 +1,167 @@
+<div id="estadoEstudiante">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-10" id="bg-estadoEstudiante">
+      <h2>Estado estudiante</h2>
+      <div class="container-fluid">
+        <div class="row">
+            <md-tabs>
+              <md-tab label="Estudiantes Pendientes">
+               <md-content>
+                  <div class="container-fluid" ng-repeat="objEstudiante  in estadoEstudianteCtrl.estadoEStudiantes | filter:{estado:'pendiente'}:true track by $index">
+                    <div class="panel-group" id="accordion" >
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h4 class="panel-title md-padd">
+                                <span>Nombre del estudiante: <a data-toggle="collapse" ng-model="estadoEstudianteCtrl.nombreEstudiante" value="{{objEstudiante.nombreEstudiante}}" data-parent="#accordion"> {{objEstudiante.nombreEstudiante}}</a></span>
+                              </h4>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-3">
+                                <button ng-click="estadoEstudianteCtrl.aceptar(objEstudiante)">Aceptar</button>
+                              </div>
+                              <div class="col-md-3">
+                                <button ng-click="estadoEstudianteCtrl.rechazado(objEstudiante)">Rechazar</button>
+                             </div>
+                          </div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p><small>Correo Electrónico:</small></p>
+                            <p ng-model="estadoEstudianteCtrl.emailEstudiante" value="{{objEstudiante.emailEstudiante}}">
+                              {{objEstudiante.emailEstudiante}}
+                            </p>
+                          </div>
+                        
+                          <div class="panel-body">
+                            <p><small>Género:</small></p>
+                            <p ng-model="estadoEstudianteCtrl.genero" value="{{objEstudiante.genero}}">
+                              {{objEstudiante.genero}}
+                            </p>
+                          </div>
+                          <div class="panel-body">
+                            <p><small>Carrera:</small></p>
+                            <p ng-model="estadoEstudianteCtrl.carreraSeleccionada" value="{{objEstudiante.carreraSeleccionada}}">
+                              {{objEstudiante.carreraSeleccionada}}
+                            </p>
+                          </div>
+                          <div class="panel-body">
+                            <p><small>Curso seleccionado:</small></p>
+                            <p ng-model="estadoEstudianteCtrl.cursoSeleccionado" value="{{objEstudiante.cursoSeleccionado}}">
+                              {{objEstudiante.cursoSeleccionado}}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </md-content>
+              </md-tab>
+
+              <md-tab label="Estudiantes Aceptados">
+                  <md-content>
+                      <div class="container-fluid" ng-repeat="objEstudiante in estadoEstudianteCtrl.estadoEStudiantes | filter:{estado:'aceptado'}:true track by $index">
+                          <div class="panel-group" id="accordion3" >
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <h4 class="panel-title md-padd">
+                                      <span data-toggle="collapse" data-target="#demo">Nombre del estudiante <a data-toggle="collapse" ng-model="estadoEstudianteCtrl.nombreEstudiante" value="{{objEstudiante.nombreEstudiante}}"  data-parent="#accordion">{{objEstudiante.nombreEstudiante}}</a></span>
+                                    </h4>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                  <p><small>Correo Electrónico:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.emailEstudiante" value="{{objEstudiante.emailEstudiante}}">
+                                    {{objEstudiante.emailEstudiante}}
+                                  </p>
+                                </div>
+                              
+                                <div class="panel-body">
+                                  <p><small>Género:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.genero" value="{{objEstudiante.genero}}">
+                                    {{objEstudiante.genero}}
+                                  </p>
+                                </div>
+                                <div class="panel-body">
+                                  <p><small>Carrera:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.carreraSeleccionada" value="{{objEstudiante.carreraSeleccionada}}">
+                                    {{objEstudiante.carreraSeleccionada}}
+                                  </p>
+                                </div>
+                                <div class="panel-body">
+                                  <p><small>Curso seleccionado:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.cursoSeleccionado" value="{{objEstudiante.cursoSeleccionado}}">
+                                    {{objEstudiante.cursoSeleccionado}}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </md-content>
+              </md-tab>
+
+              <md-tab label="Estudiantes Rechazados">
+                  <md-content>
+                      <div class="container-fluid" ng-repeat="objEstudiante in estadoEstudianteCtrl.estadoEStudiantes | filter:{estado:'rechazado'}:true track by $index">
+                          <div class="panel-group" id="accordion3" >
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <h4 class="panel-title md-padd">
+                                      <span data-toggle="collapse" data-target="#demo">Nombre del estudiante rechazado <a data-toggle="collapse" ng-model="estadoEstudianteCtrl.nombreEstudiante" value="{{objEstudiante.nombreEstudiante}}"  data-parent="#accordion">{{objEstudiante.nombreEstudiante}}</a></span>
+                                    </h4>
+                                  </div>
+                                </div>
+                              </div>
+                               <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                  <p><small>Correo Electrónico:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.emailEstudiante" value="{{objEstudiante.emailEstudiante}}">
+                                    {{objEstudiante.emailEstudiante}}
+                                  </p>
+                                </div>
+                              
+                                <div class="panel-body">
+                                  <p><small>Género:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.genero" value="{{objEstudiante.genero}}">
+                                    {{objEstudiante.genero}}
+                                  </p>
+                                </div>
+                                <div class="panel-body">
+                                  <p><small>Carrera:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.carreraSeleccionada" value="{{objEstudiante.carreraSeleccionada}}">
+                                    {{objEstudiante.carreraSeleccionada}}
+                                  </p>
+                                </div>
+                                <div class="panel-body">
+                                  <p><small>Curso seleccionado:</small></p>
+                                  <p ng-model="estadoEstudianteCtrl.cursoSeleccionado" value="{{objEstudiante.cursoSeleccionado}}">
+                                    {{objEstudiante.cursoSeleccionado}}
+                                  </p>
+                                </div>
+                                <div class="panel-body">
+                                  <p><small>Razón:</small></p>
+                                  <textarea ng-model="estadoEstudianteCtrl.razon"></textarea>
+                                </div>
+                                <div class="panel-body">
+                                  <button type="button" class="btn btn-primary" ng-click="estadoEstudianteCtrl.enviar()">Enviar </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </md-content>
+              </md-tab>
+          </md-tabs>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

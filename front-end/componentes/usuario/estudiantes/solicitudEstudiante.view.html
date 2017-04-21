@@ -1,9 +1,9 @@
 <div id="solicitudEstudiante">
-  <div class="container-fluid" class="md-padding dialogdemoBasicUsage" id="popupContainer">
+  <div class="container-fluid md-padding dialogdemoBasicUsage" id="popupContainer">
     <div class="row">
       <div class="col-md-6" id="bg-solicitudEstudiante">
         <div class="col-md-12 text-center">
-          <img src="componentes/imagenes/logoC.png" alt="">
+          <img src="componentes/imagenes/logoC.png" alt=""></img>
           <h1>Solicitud Estudiantil</h1>
           <p>¿Querés formar parte de Cenfotec Software House? Nos gustaría conocerte. Mandanos tú currículum, detallando tu trayectoria académica... ¡Permite explorar tus conocimientos, ideas y habilidades!</p>
         </div>
@@ -12,103 +12,122 @@
         <form name="formularioEstudiantil">
           <div class="row">
             <div class="col-md-6">
-              <md-input-container md-padding="25px" class="md-block">
-                <label>Nombre</label>
-                <input required="" md-no-asterisk name="nombreEstudiante" ng-model="solicitudEstudianteCtrl.nombreEstudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
-                <div ng-messages="solicitudEstudiante.nombreEstudiante.$error">
-                  <div ng-message-exp="'required'">Campo requerido</div>
-                  <div ng-message-exp="'pattern'">Solo se permiten letras</div>
-                </div>
-              </md-input-container>
-            </div>
-
-            <div class="col-md-6">
-              <md-input-container md-padding="25px" class="md-block">
-                <label>Primer apellido</label>
-                <input required="" md-no-asterisk name="apellido1Estudiante" ng-model="solicitudEstudianteCtrl.apellido1Estudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
-                <div ng-messages="solicitudEstudiante.apellido1Estudiante.$error">
-                  <div ng-message-exp="'required'">Campo requerido</div>
-                  <div ng-message-exp="'pattern'">Solo se permiten letras</div>
+              <label>Nombre</label>
+              <md-input-container class="md-block">
+                <input required="" aria-label="nombreEstudiante" name="nombreEstudiante" ng-model="solicitudEstudianteCtrl.nombreEstudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
+                <div ng-messages="formularioEstudiantil.nombreEstudiante.$error">
+                  <div ng-message ="required">Campo requerido</div>
+                  <div ng-message ="pattern">Solo se permiten letras</div>
                 </div>
               </md-input-container>
             </div>
             <div class="col-md-6">
-              <md-input-container md-padding="25px" class="md-block">
-                <label>Segundo apellido</label>
-                <input required="" md-no-asterisk name="apellido2Estudiante" ng-model="solicitudEstudianteCtrl.apellido2Estudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
-                <div ng-messages="solicitudEstudiante.apellido2Estudiante.$error">
-                  <div ng-message-exp="required">Campo requerido</div>
-                  <div ng-message-exp="pattern">Solo se permiten letras</div>
+            <label>Primer apellido</label>
+              <md-input-container  class="md-block">
+                
+                <input required="" aria-label="apellido1Estudiante" name="apellido1Estudiante" ng-model="solicitudEstudianteCtrl.apellido1Estudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
+                <div ng-messages="formularioEstudiantil.apellido1Estudiante.$error">
+                  <div ng-message="required">Campo requerido</div>
+                  <div ng-message="pattern">Solo se permiten letras</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Segundo apellido</label>
+              <md-input-container  class="md-block">
+                <input required="" aria-label="apellido2Estudiante" name="apellido2Estudiante" ng-model="solicitudEstudianteCtrl.apellido2Estudiante" ng-pattern="/^[A-Za-zÑñáéíóúÁÉÍÓÚ]*$/">
+                <div ng-messages="formularioEstudiantil.apellido2Estudiante.$error">
+                  <div ng-message="required">Campo requerido</div>
+                  <div ng-message="pattern">Solo se permiten letras</div>
                 </div>
               </md-input-container>
             </div>
             <div class="col-md-6" >
-              <md-input-container md-padding="20px" class="md-block">
-                <label md-no-asterisk>Genero:</label>
-                <md-select required="" md-no-asterisk id="txtGenero" style="color:#000;" name="industria" ng-model="solicitudEstudianteCtrl.genero" required>
+              <label>Genero:</label>
+              <md-input-container  class="md-block">  
+                <md-select required="" aria-label="genero" id="txtGenero"  name="genero" ng-model="solicitudEstudianteCtrl.genero" required>
                   <md-option value="Masculino">Masculino</md-option>
-                  <md-option value="Femenino">Femenino'</md-option>
-                  <md-option value="Reservado">Reservado</md-option>
+                  <md-option value="Femenino">Femenino</md-option>
                 </md-select>
-
-                <div ng-messages="solicitudEstudianteCtrl.genero.$error">
-                  <div ng-message-exp="required">Campo requerido</div>
+                <div ng-messages="formularioEstudiantil.genero.$error">
+                  <div ng-message="required">Campo requerido</div>
                 </div>
                 </md-input-container>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
-              <md-input-container class="md-block">
-                <label>Correo:</label>
-                <input required="" md-no-asterisk type="email"  name="emailContacto" ng-model="solicitudEstudianteCtrl.emailEstudiante" ng-pattern="/^[a-zA-Z0-9._-]+@ucenfotec.ac.cr$/" required>
-                <div ng-messages="solicitudEstudianteCtrl.emailEstudiante.$error" role="alert">
-                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Correo inválido</div>
+              <label id="lb-correo">Correo:</label>
+              <md-input-container  class="md-block">
+                <input required=""  type="email" aria-label="emailEstudiante" name="emailEstudiante" placeholder ="example@ucenfotec.ac.cr" ng-model="solicitudEstudianteCtrl.emailEstudiante" minlength="" ng-pattern="/^[a-zA-Z0-9._-]+@ucenfotec.ac.cr$/" required>
+                <div ng-messages="formularioEstudiantil.emailEstudiante.$error">
+                  <div ng-message="pattern">Correo inválido</div>
+                  <div ng-message="required">Campo requerido</div>
                 </div>
               </md-input-container>
             </div>
             <div class="col-md-6">
-              <md-input-container class="md-block">
-                <label>Nivel academico</label>
-                  <md-select required="" md-no-asterisk id="txtCarreras" style="color:#000;" name="carreras" ng-model="solicitudEstudianteCtrl.carreras" required>
+              <label>Nivel academico</label>
+              <md-input-container  class="md-block">
+                  <md-select required=""  id="txtNivelAcademico" aria-label="nivelAcademico"  name="nivelAcademico" ng-model="solicitudEstudianteCtrl.nivelAcademico" required>
                     <md-option value="Técnico">Técnico</md-option>
                     <md-option value="Bachiller">Bachiller</md-option>
                     <md-option value="Diplomado">Diplomado</md-option>
                     <md-option value="Licenciatura">Licenciatura</md-option>
                   </md-select>
+                  <div ng-messages="formularioEstudiantil.nivelAcademico.$error">
+                    <div ng-message="required">Campo requerido</div>
+                  </div>
               </md-input-container>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
+              <label>Carrera:</label>
               <md-input-container class="md-block">
-                <label>Carrera:</label>
-                  <md-select required="" md-no-asterisk id="txtCarreras" style="color:#000;" name="carreras" ng-model="solicitudEstudianteCtrl.carreras" required>
-                      <md-option value="{{carrera.nombre}}" ng-repeat="carrera in solicitudEstudianteCtrl.carreras">{{carrera.nombre}}<input type="checkbox" ng-click="agregarCarrera(carrera.nombre.$event)"></md-option>
+                  <md-select aria-label="carreras"  id="txtCarreras" ng-model="solicitudEstudianteCtrl.carreras" required>
+                      <md-option value="{{carrera.nombre}}" ng-repeat="carrera in solicitudEstudianteCtrl.carreras track by nombre" required>{{carrera.nombre}}</md-option>
                   </md-select>
+                  <div ng-messages="formularioEstudiantil.carreras.$error" role="alert">
+                    <div ng-message="required">Campo requerido</div>
+                  </div>
               </md-input-container>
             </div>
             <div class="col-md-6">
+              <label>Cursos:</label>
               <md-input-container class="md-block">
-                <label>Cursos:</label>
-                  <md-select required="" md-no-asterisk id="txtCursos" style="color:#000;" name="cursos" ng-model="solicitudEstudianteCtrl.cursos" required>
-                    <md-option value="{{carrera.nombre}}" ng-repeat="curso in solicitudEstudianteCtrl.curso">{{carrera.curso}}</md-option>
+                  <md-select  ng-model="solicitudEstudianteCtrl.cursos" aria-label="cursos" id="txtcursos" required>
+                    <md-option  ng-repeat="curso in solicitudEstudianteCtrl.cursos track by $index" >{{curso.nombre}}</md-option>
                   </md-select>
+                  <div ng-messages="formularioEstudiantil.cursos.$error" role="alert">
+                    <div ng-message="required">Campo requerido</div>
+                  </div>
               </md-input-container>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
-              <md-input-container class="md-block">
-                <label for="txtfoto">Foto perfil:</label>
-                <input class="form-control" id="txtfoto" name="foto" ng-model="solicitudEstudianteCtrl.foto" type="file" required>
-              </md-input-container>
-            </div>
-            <div class="col-md-6">
-              <md-input-container class="md-block">
-                <label for="txtcurriculum" class="control-label">Curriculum:</label>
-                <input class="form-control" id="txtcurriculum" name="curriculum" ng-model="solicitudEstudianteCtrl.curriculum" type="file" required>
-                  <div ng-messages="formularioEmpresarial.curriculum.$error">
-                  <div ng-message="required" ng-show="!formularioEmpresarial.curriculum.$pristine" class="help-block">Campo requerido</div>
+              <label for="txtfoto">Foto perfil:</label>
+              <md-input-container  class="md-block">
+                <input class="form-control" id="Foto" aria-label="foto" name="foto" ng-model="solicitudEstudianteCtrl.foto" type="file" required>
+                <div ng-messages="formularioEstudiantil.foto.$error" role="alert">
+                  <div ng-message="required">Campo requerido</div>
                 </div>
               </md-input-container>
             </div>
-              <button type="button" class="btn btn-primary" ng-click="solicitudEstudianteCtrl.save()">Enviar solicitud</button>
-              </div>
+            <div class="col-md-6">
+              <label for="txtcurriculum" class="control-label">Curriculum:</label>
+              <md-input-container  class="md-block">
+                <input class="form-control" id="Curriculum" aria-label="curriculum" name="curriculum" ng-model="solicitudEstudianteCtrl.curriculum" type="file" ng-click="solicitudEstudianteCtrl.upload()"required>
+                <div ng-messages="formularioEmpresarial.curriculum.$error">
+                  <div ng-message="required">Campo requerido</div>
+                </div>
+              </md-input-container>
+            </div>
+          </div>
+          <button type="button" aria-label="preSave" class="btn btn-primary" ng-click="solicitudEstudianteCtrl.preSave()">Enviar solicitud</button>
           </form>
       </div>
   </div>
