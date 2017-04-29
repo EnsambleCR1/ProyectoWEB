@@ -122,7 +122,52 @@
 
       }
 
+      edicionProfesorCtrl.update = function (profesorObj){
+
+        edicionProfesorCtrl.id = profesorObj._id;
+        edicionProfesorCtrl.nombreE = profesorObj.nombre;
+        edicionProfesorCtrl.primerApellidoE = profesorObj.primerApellido;
+        edicionProfesorCtrl.segundoApellidoE = profesorObj.segundoApellido;
+        edicionProfesorCtrl.emailE = profesorObj.email;
+        edicionProfesorCtrl.especialidadE = profesorObj.especialidad;
+        edicionProfesorCtrl.enfasisE = profesorObj.enfasis;
+        edicionProfesorCtrl.cursosSeleccionadosE = profesorObj.cursos;
+        edicionProfesorCtrl.estadoE = profesorObj.estado;
+
+      }
+
+      edicionProfesorCtrl.edit = function (valido){
+
+        if (valido) {
+
+          var nuevoProfesor = {
+            _id: edicionProfesorCtrl.id,
+            nombre : edicionProfesorCtrl.nombreE,
+            primerApellido : edicionProfesorCtrl.primerApellidoE,
+            segundoApellido : edicionProfesorCtrl.segundoApellidoE,
+            email : edicionProfesorCtrl.emailE,
+            estado : edicionProfesorCtrl.estadoE,
+            cursos : edicionProfesorCtrl.cursosSeleccionadosE,
+            especialidad : edicionProfesorCtrl.especialidadE,
+            enfasis : edicionProfesorCtrl.enfasisE
+          }
+
+
+          administradorService.updateProfesores(nuevoProfesor)
+          .success(function(data){
+          console.log(data);
+          init();
+        
+        })
+
+
+      }
+
+
+
 
     }
+
+  }
 
 })();

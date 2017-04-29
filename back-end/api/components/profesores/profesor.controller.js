@@ -45,10 +45,11 @@ module.exports.remove = function(req,res){
   });
 
 }
-// module.exports.update = function(req,res){
-//   console.log(req.body.id);
-//   User.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
-//     res.json({success:true,msg:'Se ha actualizado correctamente.'});
-//   });
-//
-// }
+
+module.exports.update = function(req,res){
+  console.log(req.body.id);
+  Profesor.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
+    res.json({success:true,msg:'Profesor se ha actualizado correctamente.'});
+  });
+
+}

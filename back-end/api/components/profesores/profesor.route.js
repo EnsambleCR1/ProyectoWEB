@@ -24,10 +24,10 @@ router.route('/profesores')
 //   .delete(function(req, res){
 //     profesorController.remove(req,res);
 //  	});
-// router.route('/profesores')
-//   .put(function(req, res){
-//     profesorController.update(req,res);
-//  	});
+router.route('/profesores')
+  .put(function(req, res){
+    profesorController.update(req,res);
+ 	});
 
 
 

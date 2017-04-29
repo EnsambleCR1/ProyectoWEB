@@ -24,7 +24,8 @@
       eliminarCarrera : _eliminarCarrera,
       eliminarCurso : _eliminarCurso,
       setProfesores : _setProfesores,
-      getProfesores : _getProfesores
+      getProfesores : _getProfesores,
+      updateProfesores : _updateProfesores
     };
     return publicAPI; // todas las funciones que sean llamadas por ajax deben estar debajo del return, para que cuando angular corra el script haga el return y devuelva el api , las funciones debajo del return son privadas y se devuelve el api que es el que contiene las funciones
 
@@ -64,6 +65,10 @@
 
     function _getProfesores() {
       return $http.get('http://localhost:8000/api/profesores');
+    }
+
+    function _updateProfesores(pProfesor) {
+      return $http.put('http://localhost:8000/api/profesores',pProfesor);
     }
 
   }
