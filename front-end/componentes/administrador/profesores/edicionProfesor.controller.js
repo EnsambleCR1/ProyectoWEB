@@ -75,7 +75,6 @@
 
           var password = (specials.pick(2) + lowercase.pick(1) + uppercase.pick(1) + all.pick(3, 10)).shuffle();
 
-          alert(password);
 
           var nuevoProfesor = {
             nombre : edicionProfesorCtrl.nombre,
@@ -102,7 +101,13 @@
                .ariaLabel('Left to right demo')
                .ok('OK')
              );
-
+           edicionProfesorCtrl.nombre = null;
+           edicionProfesorCtrl.primerApellido = null;
+           edicionProfesorCtrl.segundoApellido = null;
+           edicionProfesorCtrl.email = null;
+           edicionProfesorCtrl.cursosSeleccionados = null;
+           edicionProfesorCtrl.especialidad = null;
+           edicionProfesorCtrl.enfasis = null;
 
            init();
 
@@ -156,11 +161,32 @@
           administradorService.updateProfesores(nuevoProfesor)
           .success(function(data){
           console.log(data);
+
+          $mdDialog.show(
+            $mdDialog.alert()
+            .clickOutsideToClose(true)
+            .title(data.msg)
+            .textContent('')
+            .ariaLabel('Left to right demo')
+            .ok('OK')
+          );
+
           init();
-        
+
         })
 
+        $('#showEditForm').modal('hide');
 
+
+      }else {
+        $mdDialog.show(
+          $mdDialog.alert()
+          .clickOutsideToClose(true)
+          .title('¡Por favor complete los campos requeridos!')
+          .textContent('')
+          .ariaLabel('Left to right demo')
+          .ok('OK')
+        );
       }
 
 
