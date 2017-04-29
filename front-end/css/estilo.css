@@ -262,8 +262,14 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
     color: #fff;
 }
 
+<<<<<<< HEAD
 md-tabs.md-default-theme .md-tab, md-tabs .md-tab {
     color: gray;
+=======
+md-tabs.md-default-theme .md-tab, md-tabs .md-tab{
+    color: gray;
+    padding: 12px 22px;
+>>>>>>> c3a1f5a1161226f9ffbc2fbb72b340b3b3af7506
 }
 
 md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
@@ -278,7 +284,11 @@ md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
   border-radius: 0;
   font-size: 10px;
   font-weight: bold;
+<<<<<<< HEAD
   outline: none;ac
+=======
+  outline: none;
+>>>>>>> c3a1f5a1161226f9ffbc2fbb72b340b3b3af7506
   padding: 0 5px;
 }
 
