@@ -11,7 +11,11 @@
       <div class="col-md-6">
         <form name="formularioEstudiantil">
 
+<<<<<<< HEAD
          <div class="row">
+=======
+          <div class="row">
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
             <div class="col-md-6">
               <label>Nombre</label>
               <md-input-container class="md-block">
@@ -91,7 +95,11 @@
             <div class="col-md-6">
               <label>Carrera:</label>
               <md-input-container class="md-block">
+<<<<<<< HEAD
                   <md-select multiple aria-label="carreras"  id="txtCarreras" ng-model="solicitudEstudianteCtrl.carreraSeleccionada" required>
+=======
+                  <md-select aria-label="carreras"  id="txtCarreras" ng-model="solicitudEstudianteCtrl.carreraSeleccionada" required>
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
                       <md-option value="{{carrera.nombre}}" ng-repeat="carrera in solicitudEstudianteCtrl.carreras" required>{{carrera.nombre}}({{carrera.nivel}})</md-option>
                   </md-select>
                   <div ng-messages="formularioEstudiantil.carreras.$error" role="alert">
@@ -100,12 +108,21 @@
               </md-input-container>
             </div>
 
+<<<<<<< HEAD
             <div class="col-md-6">
               <label>Seleccionar cursos</label>
               <div ng-model="solicitudEstudianteCtrl.cursoSeleccionado">
                  <md-select multiple aria-label="cursos"  id="txtCursos" ng-model="solicitudEstudianteCtrl.cursoSeleccionado" required>
                       <md-option value="{{curso.nombre}}" ng-repeat="curso in solicitudEstudianteCtrl.cursos" required>{{curso.nombre}}({{curso.nivel}})</md-option>
                   </md-select>
+=======
+            <div class="col-md-6  checkboxdemoSelectAll">
+              <button class="md-button" data-toggle="dropdown">Seleccionar cursos</button> 
+              <div ng-model="solicitudEstudianteCtrl.cursoSeleccionado" class="dropdown-menu">
+                <md-checkbox ng-checked="exists(curso, selected)" ng-repeat="curso in solicitudEstudianteCtrl.cursos" ng-click="toggle(curso, selected)">
+                   {{ curso.nombre }}
+                </md-checkbox>
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
               </div>
             </div> 
           </div>
@@ -122,7 +139,11 @@
               </md-input-container>
             </div>
             <div class="col-md-6">
+<<<<<<< HEAD
               <button class="md-button" name="curriculum" ng-click="solicitudEstudianteCtrl.showPicker()" ng-model="solicitudEstudianteCtrl.curriculum" type="button">Agregar curriculum</button>
+=======
+              <button class="md-button" name="curriculum" ng-click="solicitudEstudianteCtrl.showPicker()" type="button">Agregar curriculum</button>
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
             </div>
           </div>
         

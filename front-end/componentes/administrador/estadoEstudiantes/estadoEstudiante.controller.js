@@ -14,6 +14,12 @@
        
       }init();
 
+<<<<<<< HEAD
+=======
+      var solicitudEstudiantesAceptados = [];
+      var solicitudEstudiantesRechazados = [];
+
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
       estadoEstudianteCtrl.aceptar = function(pobjEstado){
         var nuevoEstudiante = {
             nombreEstudiante: pobjEstado.nombreEstudiante,
@@ -32,6 +38,7 @@
         administradorService.setSolicitudEstudiantesCambio(nuevoEstudiante)
         .success(function(data){
           console.log(data);
+<<<<<<< HEAD
 
 
           var specials = '!@#$%^&*()_+{}:"<>?\|[];\',./`~';
@@ -94,6 +101,10 @@
         init();
          })
 
+=======
+        init();
+         })
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
  
   }
       estadoEstudianteCtrl.rechazado = function(pobjEstado){
@@ -118,6 +129,7 @@
        })
      
   }
+<<<<<<< HEAD
 
 
     estadoEstudianteCtrl.asignarProyecto = function(pobjEstado){
@@ -147,3 +159,8 @@
 }
 })();
 
+=======
+}
+})();
+
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b

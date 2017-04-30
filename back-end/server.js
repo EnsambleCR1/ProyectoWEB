@@ -11,8 +11,16 @@ var connection = config.database;
 carreraRoutes = require('./api/components/carreras/carrera.route');
 cursoRoutes = require('./api/components/cursos/curso.route');
 solicitudEstudianteRoutes = require('./api/components/solicitudEstudiantes/solicitudEstudiante.route');
+<<<<<<< HEAD
 //solicitudEstudianteAceptadoRoutes = require('./api/components/solicitudEstudiantesAceptados/solicitudEstudianteAceptado.route');
 //solicitudEstudianteRechazadoRoutes = require('./api/components/solicitudEstudiantesRechazados/solicitudEstudianteRechazado.route');
+=======
+<<<<<<< HEAD
+//solicitudEstudianteAceptadoRoutes = require('./api/components/solicitudEstudiantesAceptados/solicitudEstudianteAceptado.route');
+//solicitudEstudianteRechazadoRoutes = require('./api/components/solicitudEstudiantesRechazados/solicitudEstudianteRechazado.route');
+=======
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
 
 var app = express();
 app.use(express.static(__dirname + "/client"));//maneja archivos estáticos como un app web
@@ -68,6 +76,16 @@ function handleError(res, reason, message, code) {
 // Conexion a todas la rutas
 app.use('/api', carreraRoutes);//se define el versionamiento del api
 app.use('/api', cursoRoutes);//se define el versionamiento del api
+<<<<<<< HEAD
 app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
 //app.use('/api', solicitudEstudianteAceptadoRoutes);//se define el versionamiento del api
 //app.use('/api', solicitudEstudianteRechazadoRoutes);//se define el versionamiento del api
+=======
+<<<<<<< HEAD
+app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteAceptadoRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteRechazadoRoutes);//se define el versionamiento del api
+=======
+app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b

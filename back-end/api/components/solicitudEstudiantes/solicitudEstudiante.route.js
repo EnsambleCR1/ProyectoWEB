@@ -15,10 +15,19 @@ router.route('/solicitudEstudiantes')
   .post(function(req, res){
     solicitudEstudianteController.save(req,res);
  	});
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
 router.route('/solicitudEstudiantes')
   .put(function(req, res){
     solicitudEstudianteController.update(req,res);
  	});
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
 
 router.route('/solicitudEstudiantes')
   .get(function(req, res){
