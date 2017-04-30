@@ -11,6 +11,21 @@ body {
 
 /* Inicio de Estilo Generales */
 
+
+.checkboxdemoSelectAll .demo-legend {
+  color: #3F51B5; }
+
+.checkboxdemoSelectAll .demo-fieldset {
+  border-style: solid;
+  border-width: 1px;
+  height: 100%; }
+
+.checkboxdemoSelectAll .demo-select-all-checkboxes {
+  padding-left: 30px; }
+
+
+
+
 .no-margin {
   margin: 0;
 }
@@ -42,7 +57,9 @@ body {
   visibility:hidden!important;
 }
 
+md-pagination-wrapper{
 
+}
 
 
 .layout-padding, .layout-padding-gt-sm, .layout-padding-gt-sm > *, .layout-padding-md, .layout-padding-md > *, .layout-padding > *, .layout-padding > .flex, .layout-padding > .flex-gt-sm, .layout-padding > .flex-md {
@@ -98,9 +115,15 @@ md-sidenav h2{
 }
 
 .md-button{
-min-height: 0;
- min-width: 0;
+  min-height: 0;
+  min-width: 0;
+  color: #000;
+  margin-top: 60px;
+  background: #ecf0f1;
+  
 }
+
+
 
 md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, md-input-container:not(.md-input-invalid).md-input-focused .md-input, md-input-container.md-default-theme:not(.md-input-invalid).md-input-resized .md-input, md-input-container:not(.md-input-invalid).md-input-resized .md-input {
   border-color: #000;
@@ -112,7 +135,7 @@ md-input-container .md-input{
 }
 
 md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder, md-input-container.md-default-theme label, md-input-container label {
-  color: #000;
+  color: #bdc3c7;
 }
 md-datepicker input{
 	color:#000;
@@ -262,8 +285,17 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
     color: #fff;
 }
 
-md-tabs.md-default-theme .md-tab, md-tabs .md-tab {
+md-tabs.md-default-theme .md-tab, md-tabs .md-tab{
     color: gray;
+    padding: 12px 18px;
+}
+
+md-pagination-wrapper {
+    width:auto !important;
+}
+
+md-padding {
+    padding:0 !important;
 }
 
 md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
@@ -271,15 +303,15 @@ md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
     background: #ce6a00;
 }
 
-#estadoEstudiante .btn-primary{
+#estadoEstudiante .btn-warning{
   color: #fff;
   background-color: transparent;
   border-color: transparent;
   border-radius: 0;
   font-size: 10px;
   font-weight: bold;
-  outline: none;ac
-  padding: 0 5px;
+  outline: none;
+  padding: 2px;
 }
 
 #bg-estadoEstudiante{
@@ -300,6 +332,15 @@ md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 50px;
 }
+
+span a{
+  color: gray;
+}
+
+span a:hover{
+  color: #fbb803;
+}
+
 /*fin estado estudiante*/
 
 /* Fin Estilos Administrador*/
@@ -541,18 +582,32 @@ header .navbar-default .navbar-toggle .icon-bar {
   font-size: 40px;
 }
 
-#solicitudes .btn-primary {
+#solicitudes .btn-warning {
     color: #000;
     margin-top: 60px;
     background-color: #fbb803;
     border-color: #fbb803;
     border-radius: 0;
-    max-width: 300px;
     height: 50px;
-    font-size: 20px;
+    font-size :14px;
     font-weight: bold;
+    padding: 0 5px;
+    
 }
+    
 
+ .btn-warning {
+    color: #000;
+    margin: 60px 0 0 300px;
+    background-color: #fbb803;
+    border-color: #fbb803;
+    border-radius: 0;
+    height: 50px;
+    font-size :24px;
+    font-weight: bold;
+    padding: 3px 5px;
+    
+}
 /* End Section Solicitudes */
 
 
@@ -645,9 +700,7 @@ footer .copy-right i{
 }
 
 /*Estilos administrador*/
-.dropdown-menu{
-  background:transparent;
-}
+
 .dropdown-menu ul{
   color:#fff;
     background:transparent;

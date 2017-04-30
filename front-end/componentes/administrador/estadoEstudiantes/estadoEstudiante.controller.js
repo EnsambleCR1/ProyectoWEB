@@ -2,59 +2,65 @@
   angular
     .module('myEnsamble')
     .controller('estadoEstudianteController', estadoEstudianteController);
-    function estadoEstudianteController(administradorService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function estadoEstudianteController(solicitudEstudianteService,administradorService,$scope, $mdDialog){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var estadoEstudianteCtrl = this; //binding del controlador con el html, solo en el controlador
 
 
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
-       estadoEstudianteCtrl.estadoEstudiante = administradorService.getEstadoEstudiante();
-       // estadoEstudianteCtrl.cambios = administradorService.getCambios();
-
+       //estadoEstudianteCtrl.estadoEstudiantes = administradorService.getEstadoEstudiante();
+     //  estadoEstudianteCtrl.cambiosEstadoEstudiantes = administradorService.getCambiosEstadoEstudiantes();
+       solicitudEstudianteService.getSolicitudEstudiantes().success(function(data){estadoEstudianteCtrl.solicitudEstudiantes = data; });
+       
       }init();
 
-      estadoEstudianteCtrl.save = function (){
-        var newProyectos = {
-          nombre: estadoEstudianteCtrl.nombre,
-          cedula: estadoEstudianteCtrl.cedula,
-          nombreContacto: estadoEstudianteCtrl.nombreContacto,
-          emailContacto: estadoEstudianteCtrl.emailContacto,
-          telefonoContacto: estadoEstudianteCtrl.telefonoContacto,
-          descripcion: estadoEstudianteCtrl.descripcion,
-          industria: estadoEstudianteCtrl.industria,
-          bitacoras:[],
-          id: 0,
-          estado : 'pendiente'
+      var solicitudEstudiantesAceptados = [];
+      var solicitudEstudiantesRechazados = [];
 
-        }
-        administradorService.setProyectos(newProyectos);
-        console.log(newProyectos);
-      }
-
-      estadoEstudianteCtrl.aceptar = function(pobjProyecto){
-        console.log(pobjProyecto);
-        pobjProyecto.estado = 'aceptado';
-        administradorService.setSolicitudAceptado(pobjProyecto);
-        // verProyectoService.setAceptado(pobjProyecto);
-      }
-      estadoEstudianteCtrl.rechazado = function(pobjProyecto){
-        //console.log(pobjProyecto);
-        pobjProyecto.estado = 'rechazado';
-        administradorService.setSolicitudRechazado(pobjProyecto);
-      }
-      // estadoEstudianteCtrl.guardarCambios = function(pobjProyecto){
-      //   var newBitacora = {
-      //     inicio : estadoEstudianteCtrl.inicio,
-      //     final : estadoEstudianteCtrl.final,
-      //     costo : estadoEstudianteCtrl.costo,
-      //     descripcion : estadoEstudianteCtrl.descripcion,
-      //     industria : estadoEstudianteCtrl.industria
-      //   }
-      //   pobjProyecto.bitacoras.push( newBitacora);
-      //   administradorService.setCambios(pobjProyecto);
-      //   console.log(newBitacora);
-      // }
-    }
-     //se establece un objeto de angular normal
-
+      estadoEstudianteCtrl.aceptar = function(pobjEstado){
+        var nuevoEstudiante = {
+            nombreEstudiante: pobjEstado.nombreEstudiante,
+            apellido1Estudiante: pobjEstado.apellido1Estudiante,
+            apellido2Estudiante: pobjEstado.apellido2Estudiante,
+            genero: pobjEstado.genero,
+            emailEstudiante: pobjEstado.emailEstudiante,
+            nivelAcademico: pobjEstado.nivelAcademico,
+            carreraSeleccionada: pobjEstado.carreraSeleccionada,
+            cursoSeleccionado: pobjEstado.cursoSeleccionado,
+            foto : pobjEstado.pFoto,
+            urlCurriculum : pobjEstado.pCurriculum,
+            estado : 'Aceptado',
+            _id : pobjEstado._id
+          }
+        administradorService.setSolicitudEstudiantesCambio(nuevoEstudiante)
+        .success(function(data){
+          console.log(data);
+        init();
+         })
+ 
+  }
+      estadoEstudianteCtrl.rechazado = function(pobjEstado){
+         var nuevoEstudiante = {
+            nombreEstudiante: pobjEstado.nombreEstudiante,
+            apellido1Estudiante: pobjEstado.apellido1Estudiante,
+            apellido2Estudiante: pobjEstado.apellido2Estudiante,
+            genero: pobjEstado.genero,
+            emailEstudiante: pobjEstado.emailEstudiante,
+            nivelAcademico: pobjEstado.nivelAcademico,
+            carreraSeleccionada: pobjEstado.carreraSeleccionada,
+            cursoSeleccionado: pobjEstado.cursoSeleccionado,
+            foto : pobjEstado.pFoto,
+            urlCurriculum : pobjEstado.pCurriculum,
+            estado : 'Rechazado',
+            _id : pobjEstado._id
+          }
+        administradorService.setSolicitudEstudiantesCambio(nuevoEstudiante)
+        .success(function(data){
+          console.log(data);
+        init();
+       })
+     
+  }
+}
 })();
+

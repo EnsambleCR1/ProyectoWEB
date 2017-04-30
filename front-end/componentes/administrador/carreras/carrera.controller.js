@@ -47,14 +47,6 @@
         })
 
 
-
-
-
-
-
-
-
-
           }else {
 
             $mdDialog.show(

@@ -10,6 +10,7 @@
       </div>
       <div class="col-md-6">
         <form name="formularioEstudiantil">
+
           <div class="row">
             <div class="col-md-6">
               <label>Nombre</label>
@@ -33,6 +34,7 @@
               </md-input-container>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6">
               <label>Segundo apellido</label>
@@ -57,6 +59,7 @@
                 </md-input-container>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6">
               <label id="lb-correo">Correo:</label>
@@ -83,30 +86,31 @@
               </md-input-container>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-6">
               <label>Carrera:</label>
               <md-input-container class="md-block">
-                  <md-select aria-label="carreras"  id="txtCarreras" ng-model="solicitudEstudianteCtrl.carreras" required>
-                      <md-option value="{{carrera.nombre}}" ng-repeat="carrera in solicitudEstudianteCtrl.carreras track by nombre" required>{{carrera.nombre}}</md-option>
+                  <md-select aria-label="carreras"  id="txtCarreras" ng-model="solicitudEstudianteCtrl.carreraSeleccionada" required>
+                      <md-option value="{{carrera.nombre}}" ng-repeat="carrera in solicitudEstudianteCtrl.carreras" required>{{carrera.nombre}}({{carrera.nivel}})</md-option>
                   </md-select>
                   <div ng-messages="formularioEstudiantil.carreras.$error" role="alert">
                     <div ng-message="required">Campo requerido</div>
                   </div>
               </md-input-container>
             </div>
-            <div class="col-md-6">
-              <label>Cursos:</label>
-              <md-input-container class="md-block">
-                  <md-select  ng-model="solicitudEstudianteCtrl.cursos" aria-label="cursos" id="txtcursos" required>
-                    <md-option  ng-repeat="curso in solicitudEstudianteCtrl.cursos track by $index" >{{curso.nombre}}</md-option>
-                  </md-select>
-                  <div ng-messages="formularioEstudiantil.cursos.$error" role="alert">
-                    <div ng-message="required">Campo requerido</div>
-                  </div>
-              </md-input-container>
-            </div>
+
+            <div class="col-md-6  checkboxdemoSelectAll">
+              <button class="md-button" data-toggle="dropdown">Seleccionar cursos</button> 
+              <div ng-model="solicitudEstudianteCtrl.cursoSeleccionado" class="dropdown-menu">
+                <md-checkbox ng-checked="exists(curso, selected)" ng-repeat="curso in solicitudEstudianteCtrl.cursos" ng-click="toggle(curso, selected)">
+                   {{ curso.nombre }}
+                </md-checkbox>
+              </div>
+            </div> 
           </div>
+
+          
           <div class="row">
             <div class="col-md-6">
               <label for="txtfoto">Foto perfil:</label>
@@ -118,18 +122,14 @@
               </md-input-container>
             </div>
             <div class="col-md-6">
-              <label for="txtcurriculum" class="control-label">Curriculum:</label>
-              <md-input-container  class="md-block">
-                <input class="form-control" id="Curriculum" aria-label="curriculum" name="curriculum" ng-model="solicitudEstudianteCtrl.curriculum" type="file" ng-click="solicitudEstudianteCtrl.upload()"required>
-                <div ng-messages="formularioEmpresarial.curriculum.$error">
-                  <div ng-message="required">Campo requerido</div>
-                </div>
-              </md-input-container>
+              <button class="md-button" name="curriculum" ng-click="solicitudEstudianteCtrl.showPicker()" type="button">Agregar curriculum</button>
             </div>
           </div>
-          <button type="button" aria-label="preSave" class="btn btn-primary" ng-click="solicitudEstudianteCtrl.preSave()">Enviar solicitud</button>
-          </form>
-      </div>
+        
+              <button type="button" aria-label="preSave" class="btn btn-warning" ng-click="solicitudEstudianteCtrl.preSave()">Enviar solicitud</button>
+         
+      </form>
+    </div>
   </div>
 </div>
 </div>
