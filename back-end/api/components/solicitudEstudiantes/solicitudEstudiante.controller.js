@@ -17,8 +17,12 @@ module.exports.save = function(req,res){ //exporta el controlador
           carreraSeleccionada:req.body.carreraSeleccionada,
           cursoSeleccionado:req.body.cursoSeleccionado,
           foto:req.body.foto,
+<<<<<<< HEAD
           urlCurriculum:req.body.urlCurriculum,
           estado:'Pendiente'
+=======
+          urlCurriculum:req.body.urlCurriculum
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
         }); 
 
 
@@ -45,6 +49,7 @@ module.exports.remove = function(req,res){
   });
 
 }
+<<<<<<< HEAD
  module.exports.update = function(req,res){
    console.log(req.body.id);
    SolicitudEstudiante.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
@@ -52,3 +57,12 @@ module.exports.remove = function(req,res){
    });
 
  }
+=======
+// module.exports.update = function(req,res){
+//   console.log(req.body.id);
+//   User.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
+//     res.json({success:true,msg:'Se ha actualizado correctamente.'});
+//   });
+//
+// }
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4

@@ -15,10 +15,13 @@ router.route('/solicitudEstudiantes')
   .post(function(req, res){
     solicitudEstudianteController.save(req,res);
  	});
+<<<<<<< HEAD
 router.route('/solicitudEstudiantes')
   .put(function(req, res){
     solicitudEstudianteController.update(req,res);
  	});
+=======
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
 
 router.route('/solicitudEstudiantes')
   .get(function(req, res){
