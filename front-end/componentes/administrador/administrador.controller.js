@@ -2,11 +2,11 @@
   angular
     .module('myEnsamble')
     .controller('administradorController', administradorController);
-    function administradorController(administradorService,  $scope, $timeout, $mdSidenav){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function administradorController(administradorService,$scope, $timeout, $mdSidenav){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var administradorCtrl = this; //binding del controlador con el html, solo en el controlador
 
-      $scope.toggleLeft = buildToggler('left');
+    $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
 
     function buildToggler(componentId) {

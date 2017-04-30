@@ -2,23 +2,22 @@
   angular
     .module('myEnsamble')
     .controller('estudianteController',estudianteController);
-    function estudianteController(estudianteService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function estudianteController(estudianteService,solicitudEstudianteService,$http,inicioSesionService,$scope){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var estudianteCtrl = this; //binding del controlador con el html, solo en el controlador
 
+      $scope.toggleLeft = buildToggler('left');
+    $scope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
-      }init();
+        solicitudEstudianteService.getSolicitudEstudiantes().success(function(data){estudianteCtrl.solicitudEstudiantes = data; });
+      }init(); 
 
-       estudianteCtrl.estudiante = estudianteService.getEstudiantes() ;
-       var newEstudiante ={
-        nombre : estudianteCtrl.nombre
-       }
-       estudianteService.setEstudiantes(newEstudiante);
-       console.log(newEstudiante);
-
-
-      }
-     //se establece un objeto de angular normal
-
-})();
+  }
+})()
