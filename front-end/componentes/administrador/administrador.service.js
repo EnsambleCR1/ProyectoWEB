@@ -3,7 +3,21 @@
   .module('myEnsamble')
   .service('administradorService', administradorService);
 
-  function administradorService($http){
+  function administradorService(inicioSesionService,$http){
+
+
+
+    var profesores = [
+      {
+        nombre : 'Pablo Monestel',
+        correo : 'pmonestel@ucenfotec.ac.cr',
+        contrasenna : 'Pmonestel@',
+        tipo : 'profesor'
+      }
+    ];
+    var estadoEstudiantes = [];
+    var solicitudEstudiantesAceptados = [];
+    var solicitudEstudiantesRechazados = [];
 
     var publicAPI = {
       setCarreras : _setCarreras,
@@ -15,15 +29,37 @@
       setProfesores : _setProfesores,
       getProfesores : _getProfesores,
       updateProfesores : _updateProfesores
+      setSolicitudEstudiantesCambio : _setSolicitudEstudiantesCambio,
+      setSolicitudEstudiantesCambio : _setSolicitudEstudiantesCambio
+      setEstadoEstudiante : _setEstadoEstudiante,
+      getEstadoEstudiante : _getEstadoEstudiante,
+      setSolicitudAceptado : _setSolicitudAceptado,
+      setSolicitudRechazado : _setSolicitudRechazado
+      getSolicitudEstud : _getSolicitudEstud
+
     };
     return publicAPI; // todas las funciones que sean llamadas por ajax deben estar debajo del return, para que cuando angular corra el script haga el return y devuelva el api , las funciones debajo del return son privadas y se devuelve el api que es el que contiene las funciones
 
 
+    //function _setAsignarEstudianteProyecto(pnuevoEstudianteAceptado){
+   //   return $http.post('http://localhost:8000/api/proyectos', pnuevoEstudianteAceptado);
+    //}
+
+    function _setSolicitudEstudiantesCambio(nuevoEstudiante){
+      return $http.put('http://localhost:8000/api/solicitudEstudiantes', nuevoEstudiante);
+    }
+
+    function _setSolicitudEstudiantesCambio(nuevoEstudiante){
+      return $http.put('http://localhost:8000/api/solicitudEstudiantes', nuevoEstudiante);
+    }
+
+    function _getSolicitudEstud(){
+      return $http.get('http://localhost:8000/api/solicitudEstudiantes');
+    }
 
     function _setCarreras(pCarrera){
       //users.push(pUser);
       return $http.post('http://localhost:8000/api/carreras', pCarrera);
-
     }
 
     function _setCursos(pCurso){
@@ -60,4 +96,5 @@
 
   }
 
+  
 })();

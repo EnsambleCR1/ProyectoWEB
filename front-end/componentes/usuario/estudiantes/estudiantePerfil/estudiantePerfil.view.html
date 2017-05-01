@@ -1,45 +1,67 @@
-<div ng-cloak="" class="inputdemoErrors" ng-app="myEnsamble">
-  <div layout="row" >
-    <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="25">
-      <img src="componentes/imagenes/logoC.png" alt="logo Soft House">
+<section layout="row" flex id="estudiante">
 
-        <button class="sesion" layout-aling="center end" ui-sref="registrarHoras">Cronómetro</button>
-    </md-sidenav>
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
 
-    <md-content flex>
-      <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
-        <span flex></span>
-        <div>
-          <i class="fa fa-bell-o" aria-hidden="true"></i>
-          <button  class="session" layout-align="center end"> Notificaciones</button>
-        </div>
-        <div>
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-          <button  class="session" ui-sref="calendario" layout-align="center end"> Agenda</button>
-        </div>
-        <div>
-          <i class="fa fa-cog" aria-hidden="true"></i>
-          <button  class="session" layout-align="center end"> Opciones</button>
-        </div>
-        <div>
-          <i class="fa fa-user-o" aria-hidden="true"></i>
-          <button  class="session" layout-align="center end"> Hola Usuario</button>
-        </div>
-        <div>
-          <i class="fa fa-power-off" aria-hidden="true"></i>
-        <button  class="session" ui-sref="inicio" layout-align="center end"> Salir</button>
-        </div>
-      </md-nav-bar>
+    <md-toolbar class="md-theme-indigo">
 
-      <div class="container-fluid">
-        <h2>Buenos dias,<span ng-repeat="alumno in estudiantes | limitTo:1">{{alumno.estudiantes}}</span></h2>
-        <h3>Proyectos Activos</h3>
-        <a data-toggle="collapse" ng-model="estudianteCtrl.nombre" value="{{solEstudiante.nombre}}" data-parent="#accordion">{{solEstudiante.nombre}}</a>
-          <p>agregar informacion</p>
-      </div>
-      </div>
-      </div>
+
+        <h1 class="md-toolbar-tools" ng-model="estadoEstudianteCtrlestudianteCtrl.solicitudEstudiantes" value="{{pobjEstado.nombreEstudiante}}">
+        <i class="fa fa-user-o" aria-hidden="true"></i>{{pobjEstado.nombreEstudiante}}</h1>
+
+    </md-toolbar>
+
+    <md-content layout-margin>
+      <a ui-sref="estudiantePerfil"><img src="componentes/imagenes/logoC.png" alt="logo Soft House"></a>
+      
+
+      <button ng-click="toggleLeft()" class="btn-primary">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
     </md-content>
+
+  </md-sidenav>
+
+  <md-content flex layout-padding>
+
+    <div layout="column" layout-align="top">
+
+      <div>
+        <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
+          <span flex>
+            <button ng-click="toggleLeft()" class="btn-primary">
+              <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+            </button>
+          </span>
+
+          <div class="icono">
+            <i class="fa fa-bell-o" aria-hidden="true"></i>
+            <button  class="session" layout-align="center end"> Notificaciones</button>
+          </div>
+          <div class="icono">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <button  class="session" layout-align="center end"> Calendario</button>
+          </div>
+          <div class="icono">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <button  class="session" layout-align="center end"> Opciones</button>
+          </div>
+          <div class="icono">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+          <button  class="session" ui-sref="inicio" layout-align="center end"> Salir</button>
+          </div>
+        </md-nav-bar>
+
+      </div>
+    </div>
+
+  </md-content>
+
+
+
+</section>
+
+<div ui-view id="bg-estudiante">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h1><span ng-model="estudianteCtrl.solicitudEstudiantes" value="{{pobjEstado.nombreEstudiante}}">{{pobjEstado.nombreEstudiante}}</span></h1>
   </div>
 </div>
-<div ui-view></div>

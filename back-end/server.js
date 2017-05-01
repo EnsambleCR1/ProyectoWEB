@@ -12,6 +12,7 @@ carreraRoutes = require('./api/components/carreras/carrera.route');
 cursoRoutes = require('./api/components/cursos/curso.route');
 profesorRoutes = require('./api/components/profesores/profesor.route');
 usuarioRoutes = require('./api/components/usuarios/usuario.route');
+solicitudEstudianteRoutes = require('./api/components/solicitudEstudiantes/solicitudEstudiante.route');
 
 
 var app = express();
@@ -68,5 +69,21 @@ function handleError(res, reason, message, code) {
 // Conexion a todas la rutas
 app.use('/api', carreraRoutes);//se define el versionamiento del api
 app.use('/api', cursoRoutes);//se define el versionamiento del api
+<<<<<<< HEAD
 app.use('/api', profesorRoutes);
 app.use('/api', usuarioRoutes);
+=======
+<<<<<<< HEAD
+app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteAceptadoRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteRechazadoRoutes);//se define el versionamiento del api
+=======
+<<<<<<< HEAD
+app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteAceptadoRoutes);//se define el versionamiento del api
+//app.use('/api', solicitudEstudianteRechazadoRoutes);//se define el versionamiento del api
+=======
+app.use('/api', solicitudEstudianteRoutes);//se define el versionamiento del api
+>>>>>>> 85a0353358099d3528224ad2bf76d79d823b49d4
+>>>>>>> 165a10ab3f14e643372df0310e0d61bd97808c8b
+>>>>>>> 6cc516614e2112e0c4dfb88ba9b3e68a45a1fab7
