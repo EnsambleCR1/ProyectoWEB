@@ -67,6 +67,22 @@ module.exports.update = function(req,res){
   console.log(req.body.id);
   Profesor.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
     res.json({success:true,msg:'Cambios guardados.'});
+
+    var server 	= email.server.connect({
+     user:    "ensamblecostarica@gmail.com",
+     password: "ensamblecr11",
+     host:    "smtp.gmail.com",
+     ssl:     true
+  });
+
+    // send the message and get a callback with an error or details of the message that was sent
+    server.send({
+       text:    "Hola " + req.body.nombre + "! Su estado ha cambiado a " + req.body.estado ,
+       from:    "ensamblecostarica@gmail.com",
+       to:      req.body.email,
+       subject: "Notificación de cambio de estado"
+    }, function(err, message) { console.log(err || message); });
+
   });
 
 }

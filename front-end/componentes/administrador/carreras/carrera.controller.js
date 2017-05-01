@@ -72,7 +72,7 @@
       carreraCtrl.eliminarCarrera = function (id, ev){
 
 
-            confirm = $mdDialog.confirm()
+          confirm = $mdDialog.confirm()
           .title('¿Está seguro de que desea eliminar la carrera seleccionada?')
           .textContent('')
           .ariaLabel('Lucky day')

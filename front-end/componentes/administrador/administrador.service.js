@@ -3,18 +3,7 @@
   .module('myEnsamble')
   .service('administradorService', administradorService);
 
-  function administradorService(inicioSesionService,$http){
-
-
-
-    var profesores = [
-      {
-        nombre : 'Pablo Monestel',
-        correo : 'pmonestel@ucenfotec.ac.cr',
-        contrasenna : 'Pmonestel@',
-        tipo : 'profesor'
-      }
-    ];
+  function administradorService($http){
 
     var publicAPI = {
       setCarreras : _setCarreras,
@@ -56,8 +45,6 @@
     function _eliminarCurso(id) {
       return $http.delete('http://localhost:8000/api/cursos/' + id);
     }
-
-
 
     function _setProfesores(pProfesor) {
       return $http.post('http://localhost:8000/api/profesores', pProfesor);

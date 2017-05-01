@@ -14,7 +14,8 @@
       url: '/administrador',
       templateUrl: 'componentes/administrador/administrador.view.html',
       controller: 'administradorController',
-      controllerAs: 'administradorCtrl'
+      controllerAs: 'administradorCtrl',
+      authenticate: true
     })
     .state('empresa',{
       url: '/empresa',

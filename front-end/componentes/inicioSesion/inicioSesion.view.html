@@ -17,26 +17,33 @@
                     <h1 class="text-center">Iniciar Sesión</h1>
                   </div>
 
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <i class="fa fa-envelope-o" aria-hidden="true"></i><label> Cuenta de Correo</label>
-                      <input class="form-control" name="correo" ng-model="inicioSesionCtrl.correo" ng-pattern="/^[a-zA-Z0-9._-]+@ucenfotec.ac.cr$/" required>
-                      <div ng-messages="formularioInicioSesion.correo.$error">
-                        <div ng-message="required" ng-show="!formularioInicioSesion.correo.$pristine" class="help-block">Campo requerido</div>
-                        <div ng-message-exp="'pattern'">Email inválido</div>
-                      </div>
+
+                  <div class="col-md-12" ng-class="
+                  {
+                    'errorBorder': formularioInicioSesion.correo.$invalid && (!formularioInicioSesion.correo.$pristine || formularioInicioSesion.$submitted)
+                  }
+                  ">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i><label> Cuenta de Correo</label>
+                    <input type="email" class="form-control" name="correo" ng-model="inicioSesionCtrl.correo" ng-pattern="/^[a-zA-Z0-9._-]+@ucenfotec.ac.cr$/" required>
+                    <div ng-messages="formularioInicioSesion.correo.$error" class="error" ng-show="formularioInicioSesion.correo.$invalid && (!formularioInicioSesion.correo.$pristine || formularioInicioSesion.$submitted)">
+                      <div ng-message="required" >Campo requerido</div>
+                      <div ng-message="pattern">Correo electrónico inválido</div>
                     </div>
                   </div>
 
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <i class="fa fa-lock fa-3x" aria-hidden="true"></i><label> Contraseña</label>
-                      <input class="form-control" type="password" name="contrasenna" ng-model="inicioSesionCtrl.contrasenna" id="input_1" tabindex="0" aria-required="true" aria-invalid="true" ng-required="true">
-                      <div ng-messages="formularioInicioSesion.contrasenna.$error">
-                        <div ng-message="required" ng-show="!formularioInicioSesion.correo.$pristine" class="help-block">Campo requerido</div>
-                      </div>
+
+                  <div class="col-md-12" ng-class="
+                  {
+                    'errorBorder': formularioInicioSesion.contrasenna.$invalid && (!formularioInicioSesion.contrasenna.$pristine || formularioInicioSesion.$submitted)
+                  }
+                  ">
+                    <i class="fa fa-lock fa-3x" aria-hidden="true"></i><label> Contraseña</label>
+                    <input type="password" class="form-control" name="contrasenna" ng-model="inicioSesionCtrl.contrasenna" required>
+                    <div ng-messages="formularioInicioSesion.contrasenna.$error" class="error" ng-show="formularioInicioSesion.contrasenna.$invalid && (!formularioInicioSesion.contrasenna.$pristine || formularioInicioSesion.$submitted)">
+                      <div ng-message="required" >Campo requerido</div>
                     </div>
                   </div>
+
 
                   <div class="col-md-6">
                     <div class="">
@@ -46,7 +53,7 @@
 
                   <div class="col-md-6">
                     <div class="">
-                      <button class="btn btn-primary pull-right" type="submit" ng-click="inicioSesionCtrl.inicioSesion()">Iniciar sesión</button>
+                      <button class="btn btn-primary pull-right" type="submit" ng-click="inicioSesionCtrl.inicioSesion(formularioInicioSesion.$valid)">Iniciar sesión</button>
                     </div>
                   </div>
 
