@@ -2,7 +2,7 @@
   angular
     .module('myEnsamble')
     .controller('edicionProfesorController', edicionProfesorController);
-    function edicionProfesorController(administradorService, $scope, $mdDialog){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function edicionProfesorController(administradorService,inicioSesionService, $scope, $mdDialog){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var edicionProfesorCtrl = this; //binding del controlador con el html, solo en el controlador
 
@@ -73,7 +73,7 @@
               return array.join('');
           };
 
-          var password = (specials.pick(2) + lowercase.pick(1) + uppercase.pick(1) + all.pick(3, 10)).shuffle();
+          var password = (specials.pick(1) + lowercase.pick(1) + uppercase.pick(1) + all.pick(3, 10)).shuffle();
 
 
           var nuevoProfesor = {
@@ -110,6 +110,20 @@
            edicionProfesorCtrl.enfasis = null;
 
            init();
+
+           if (data.success == true) {
+
+             var tempUsuario = {
+               nombre : nuevoProfesor.nombre,
+               correo : nuevoProfesor.email,
+               contrasenna : nuevoProfesor.contrasenna,
+               tipo : 'Profesor',
+               acceso : nuevoProfesor.estado
+             }
+
+             inicioSesionService.setUsuarios(tempUsuario);
+
+           }
 
          })
 
@@ -156,6 +170,7 @@
             especialidad : edicionProfesorCtrl.especialidadE,
             enfasis : edicionProfesorCtrl.enfasisE
           }
+
 
 
           administradorService.updateProfesores(nuevoProfesor)

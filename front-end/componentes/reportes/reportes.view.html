@@ -1,0 +1,73 @@
+<md-toolbar>
+  <h2 class="md-toolbar-tools md-center col-md-offset-2 col-md-10">
+      <span>Reportes</span>
+  </h2>
+</md-toolbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <md-tabs class="col-md-offset-2 col-md-10" id="tabs-reportes" class="md-padding">
+
+      <md-tab class="tab-estadoEstudiantes" label="Estudiantes Cenfotec Software House" id="EstudiantesCenfotec">
+        <md-content>
+          <div>
+            <table>
+              <tr>
+                <th>Pendientes</th>
+                <th>Aceptados</th>
+                <th>Rechazados</th>
+              </tr>
+              <tr ng-repeat="pobjEstudiante in reporteCtrl.solicitudEstudiantes | filter: {estado :'Pendiente'}">
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.nombreEstudiante}}{{pobjEstado.apellido1Estudiante}}{{pobjEstado.apellido2Estudiante}}">{{pobjEstado.nombreEstudiante}} {{pobjEstado.apellido1Estudiante}} {{pobjEstado.apellido2Estudiante}}</td>
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.emailEstudiante}}">{{pobjEstado.emailEstudiante}}</td>
+              </tr>
+              <tr ng-repeat="pobjEstudiante in reporteCtrl.solicitudEstudiantes | filter: {estado :'Aceptado'}">
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.nombreEstudiante}}{{pobjEstado.apellido1Estudiante}}{{pobjEstado.apellido2Estudiante}}">{{pobjEstado.nombreEstudiante}} {{pobjEstado.apellido1Estudiante}} {{pobjEstado.apellido2Estudiante}}</td>
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.emailEstudiante}}">{{pobjEstado.emailEstudiante}}</td>
+              </tr>
+               <tr ng-repeat="pobjEstudiante in reporteCtrl.solicitudEstudiantes | filter: {estado :'Rechazado'}">
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.nombreEstudiante}}{{pobjEstado.apellido1Estudiante}}{{pobjEstado.apellido2Estudiante}}">{{pobjEstado.nombreEstudiante}} {{pobjEstado.apellido1Estudiante}} {{pobjEstado.apellido2Estudiante}}</td>
+                <td ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstado.emailEstudiante}}">{{pobjEstado.emailEstudiante}}</td>
+              </tr>
+            </table>
+          </div>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab class="tab-estadoProfesores" label="Profesores Cenfotec Software House" id="ProfesoresCenfotec">
+        <md-content>
+          <div>
+            <table>
+              <tr>
+                <th>Elegible</th>
+                <th>Activos</th>
+                <th>Inactivos</th>
+                <th>Comité</th>
+              </tr>
+              <tr ng-repeat="pobjProfesor in reporteCtrl.profesores | filter: {estado :'Elegible'}">
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}">{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</td>
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.especialidad}}">{{pobjProfesor.especialidad}}</td>
+              </tr>
+              <tr ng-repeat="pobjProfesor in reporteCtrl.profesores | filter: {estado :'Activos'}">
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}">{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</td>
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.especialidad}}">{{pobjProfesor.especialidad}}</td>
+              </tr>
+              <tr ng-repeat="pobjProfesor in reporteCtrl.profesores | filter: {estado :'Inactivos'}">
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}">{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</td>
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.especialidad}}">{{pobjProfesor.especialidad}}</td>
+              </tr>
+              <tr ng-repeat="pobjProfesor in reporteCtrl.profesores | filter: {estado :'Comité'}">
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}">{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</td>
+                <td ng-model="reporteCtrl.profesores" value="{{pobjProfesor.especialidad}}">{{pobjProfesor.especialidad}}</td>
+              </tr>
+            </table>
+          </div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </div>
+</div>
+ 
+<div ui-view></div>

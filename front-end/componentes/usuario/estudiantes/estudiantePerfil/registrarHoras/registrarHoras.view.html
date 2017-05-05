@@ -1,0 +1,31 @@
+<md-toolbar>
+  <h2 class="md-toolbar-tools md-center col-md-offset-3 col-md-9">
+    <span>Cronometro</span>
+  </h2>
+</md-toolbar>
+<md-content  flex layout="column" flex class="container">
+  <md-button class="md-button register" ng-click="registrarHorasCtrl.horaInicio()" type="submit">Iniciar Trabajo</md-button>
+  <md-button class="md-button register" ng-click="registrarHorasCtrl.horaFinal(); registrarHorasCtrl.save()" type="submit">Finalizar Trabajo</md-button>
+
+  <table class="table table-bordered"ng-controller="registrarHorasController as registrarHorasCtrl" id="tblHorasProyecto">
+    <thead>
+      <tr>
+        <th>Hora de Inicio</th>
+        <th>Hora de Inicio</th>
+        <th>Horas trabajadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="registro in registrarHorasCtrl.horas">
+        <td class="done-{{registrarHorasCtrl.done}}" value="{{registro.horaInicio}}">{{registro.horaInicio | date:'HH:mm'}}</td>
+        <td class="done-{{registrarHorasCtrl.done}}" value="{{registro.horaFinal}}">{{registro.horaFinal | date:'HH:mm'}}</td>
+        <td class="done-{{registrarHorasCtrl.done}}" value="{{registro.tiempoTrabajado}}">{{registro.tiempoTrabajado}}</td>
+        <!-- <td><input type="checkbox" ng-model="checkComplete"></td> -->
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    </div>
+  </form>
+</md-content>
+<div ui-view></div>

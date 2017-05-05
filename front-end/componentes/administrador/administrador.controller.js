@@ -2,7 +2,7 @@
   angular
     .module('myEnsamble')
     .controller('administradorController', administradorController);
-    function administradorController(administradorService,  $scope, $timeout, $mdSidenav){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function administradorController(administradorService,  $scope, $timeout, $mdSidenav,  $sessionStorage, Notification){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var administradorCtrl = this; //binding del controlador con el html, solo en el controlador
 
@@ -20,6 +20,23 @@
 
       }init();
 
+
+      $scope.warningTitle = function() {
+
+        var getUser = sessionStorage.getItem("user");
+
+
+        var user = JSON.parse(getUser);
+
+        var messages = ['Bienvenido a Cenfotec Software House ' + user.nombre
+        ];
+
+
+        for (var i = 0; i < messages.length; i++) {
+          Notification({message: messages[i], title: 'Cenfotec Software House'});
+        }
+
+      };
 
 
     }

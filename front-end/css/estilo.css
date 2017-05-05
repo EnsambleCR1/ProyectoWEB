@@ -8,15 +8,10 @@ body {
     color: #000;
 }
 
-
 /* Inicio de Estilo Generales */
-
 .modal-backdrop {
   z-index: -1;
 }
-
-
-
 .errorBorder input[type=text]{
   box-shadow: 0 0 5px rgba(223,116,0, 1);
   border: 1px solid rgba(223,116,0, 1);
@@ -30,6 +25,7 @@ body {
 .error{
   color: #df7400;
 }
+
 
 
 
@@ -49,11 +45,6 @@ body {
 .layout-padding, .layout-padding-gt-sm, .layout-padding-gt-sm > *, .layout-padding-md, .layout-padding-md > *, .layout-padding > *, .layout-padding > .flex, .layout-padding > .flex-gt-sm, .layout-padding > .flex-md {
     padding: 0;
 }
-
-md-content.md-default-theme, md-content {
-  background-color: #000;
-}
-
 md-nav-bar.md-default-theme .md-nav-bar, md-nav-bar .md-nav-bar {
     padding: 0px;
     background-color: #000;
@@ -112,8 +103,29 @@ md-input-container .md-input{
   color: #000;
 }
 
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon{
+  color: #fff;
+}
+
 md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder, md-input-container.md-default-theme label, md-input-container label {
   color: #000;
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar{
+  color: #fbb803;
+  background: #fbb803;
+}
+
+a{
+  color:#af8000;
+}
+
+a:focus, a:hover{
+  color: #efd07a;
+}
+
+md-tabs.md-default-theme .md-tab, md-tabs .md-tab{
+  color:gray;
 }
 md-datepicker input{
 	color:#000;
@@ -184,7 +196,6 @@ md-toolbar i{
 }
 
 span{
-  padding: 1%;;
   display:block;
 }
 i{
@@ -215,7 +226,7 @@ i{
 /*inicio proyectos*/
 
 md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
-    min-height: 658px;
+    min-height: 648px;
 }
 .fixed{
   position:fixed;
@@ -249,6 +260,10 @@ md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
 
 }
 
+#administrador span{
+  color: #fff;
+}
+
 #bg-administrador h1{
   color: #fbb803;
   margin-top: 250px;
@@ -258,6 +273,34 @@ md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
 }
 
 /* Fin Estilos Administrador*/
+
+/* Inicio Estilos Profesor*/
+
+#profesor .btn-primary{
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: bold;
+  outline: none;
+  padding: 0 5px;
+}
+
+#bg-profesor{
+  background-image: url("../componentes/imagenes/bg-profesor.jpg");
+  background-position: center center;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+
+}
+
+/* Fin Estilos Profesor*/
+
 
 
 /************************log in***********************************/
@@ -471,7 +514,7 @@ header .navbar-default .navbar-toggle .icon-bar {
 }
 
 #solicitudes #solicitudEstudiante{
-  background-image: url("../componentes/imagenes/estudiantes.gif");
+  background-image: url("../componentes/imagenes/pexels-photo-306534.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
   max-width: 100%;
@@ -654,9 +697,7 @@ footer .copy-right i{
   padding-top: 15vh;
 }
 
-#empresa label{
-  padding-top: 5vh;
-}
+
 
 #empresa .form-control{
   border-radius: none;
@@ -665,7 +706,6 @@ footer .copy-right i{
 
 #empresa .btn-primary{
     color: #000;
-    margin-top: 60px;
     background-color: #fbb803;
     border-color: #fbb803;
     border-radius: 0;
@@ -680,7 +720,7 @@ footer .copy-right i{
 
 /* Incio estilos solicitudEstudiante */
 #solicitudEstudiante #bg-solicitudEstudiante{
-  background-image: url("../componentes/imagenes/estudiante.jpeg");
+  background-image: url("../componentes/imagenes/pexels-photo-306534.jpeg");
   background-position: center center;
   background-size: cover;
   height: 100vh;
@@ -809,14 +849,6 @@ footer .copy-right i{
   color: #000;
 }
 
-
-
-
-
-
-
-
-
 /* Fin estilos  Carreras y Cursos */
 
 /* Incio estilos Iniciar Sesion */
@@ -864,6 +896,7 @@ footer .copy-right i{
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
+    margin-top: 50px;
 }
 
 md-sidenav md-content {
@@ -873,3 +906,139 @@ md-sidenav md-content {
 
 
 /* Fin estilos  Iniciar Sesion */
+
+/*estilos agregados jeremy*/
+.img{
+  height:100px;
+  width:90px;
+}
+.decorationNone{
+  text-decoration:none;
+}
+md-content.md-default-theme, md-content {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+md-pagination-wrapper {
+    height: 40px;
+   /* margin-left: 29%;*/
+    display: block;
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.35,0,.25,1);
+    transition: -webkit-transform .5s cubic-bezier(.35,0,.25,1);
+    transition: transform .5s cubic-bezier(.35,0,.25,1);
+    transition: transform .5s cubic-bezier(.35,0,.25,1),-webkit-transform .5s cubic-bezier(.35,0,.25,1);
+    position: absolute;
+    width: 999999px;
+    left: 0;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+/*fin*/
+md-select{
+  background-color:transparent;
+}
+
+.asistenteRevision_content{
+  height:370vh;
+}
+
+span{
+  color: gray;
+
+}
+
+.pDescripcion{
+  color:#fff;
+}
+.panel-body{
+  color:#fff;
+}
+#proyectoPendiente h2{
+  color: #fbb803;
+  font-weight: bolder;
+  padding: 50px 0;
+}
+.panel-default>.panel-heading {
+    color: #000;
+    background-color: rgba(0,0,0,0.1);
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.6);
+    /* border: 1px solid transparent; */
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.no-margin{
+  margin:0px;
+}
+.col-md-new{
+  width:52%;
+}
+.md-top{
+  margin-top:25px;
+}
+md-divider{
+  color:#fff;
+  margin-bottom:5px;
+  background-color:#fff;
+}
+
+
+/*estilo perfil estudiante*/
+#bg-estudiante{
+  background-image: url("../componentes/imagenes/bg-profesor.jpg");
+  background-position: center center;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+
+}
+
+#bg-estudiante h1{
+  color: #fbb803;
+  margin-top: 250px;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 50px;
+}
+
+#estudiante .btn-primary{
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+  font-size: 10px;
+  font-weight: bold;
+  outline: none;
+  padding: 0 5px;
+}
+
+/*fin estilo perfil estudiante*/
+
+/*incio estilo reportes*/
+table{
+  padding-left: 20px;
+}
+
+table th{
+  color: #fbb803;
+  font-weight: bolder;
+  padding: 30px 320px 30px 50px;
+}
+
+#bloque-profesor{
+  background: white;
+  padding-left: 20px;
+}
+
+
+/*fin estilo reportes*/
+
+.table-striped>tbody>tr:nth-of-type(odd){
+  background-color: rgba(0, 0, 0, 0.4);
+}

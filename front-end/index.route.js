@@ -14,25 +14,26 @@
       url: '/administrador',
       templateUrl: 'componentes/administrador/administrador.view.html',
       controller: 'administradorController',
-      controllerAs: 'administradorCtrl'
+      controllerAs: 'administradorCtrl',
+      authenticate: true
     })
-    .state('empresa',{
-      url: '/empresa',
-      templateUrl: 'componentes/empresa/empresa.view.html',
-      controller: 'empresaController',
-      controllerAs: 'empresaCtrl'
-    })
-    .state('proyectos',{
-      url: '/proyectos',
-      templateUrl: 'componentes/proyectos/proyectos.view.html',
-      controller: 'proyectosController',
-      controllerAs: 'proyectosCtrl'
+    .state('solicitudProyecto',{
+      url: '/solicitudProyecto',
+      templateUrl: 'componentes/solicitudProyectos/solicitudProyecto.view.html',
+      controller: 'solicitudProyectoController',
+      controllerAs: 'solicitudProyectoCtrl'
     })
     .state('calendario',{
       url: '/calendario',
       templateUrl: 'componentes/calendario/calendario.view.html',
       controller: 'calendarioController',
       controllerAs: 'calendarioCtrl'
+    })
+    .state('reporte',{
+      url: '/reporte',
+      templateUrl: 'componentes/reporte/reporte.view.html',
+      controller: 'reporteController',
+      controllerAs: 'reporteCtrl'
     })
     .state('administrador.carrera',{
       templateUrl: 'componentes/administrador/carreras/carrera.view.html',
@@ -43,6 +44,11 @@
       templateUrl: 'componentes/administrador/cursos/curso.view.html',
       controller: 'cursoController',
       controllerAs: 'cursoCtrl'
+    })
+    .state('administrador.reporte',{
+      templateUrl: 'componentes/administrador/reportes/reportes.view.html',
+      controller: 'reporteController',
+      controllerAs: 'reporteCtrl'
     })
     .state('administrador.profesor',{
       templateUrl: 'componentes/administrador/profesores/edicionProfesor.view.html',
@@ -55,17 +61,21 @@
       controller: 'inicioSesionController',
       controllerAs: 'inicioSesionCtrl'
     })
-    .state('solicitudEstudiante',{
+    .state('administrador.estadoProyecto',{
+      templateUrl: 'componentes/administrador/estadoProyectos/estadoProyecto.view.html',
+      controller: 'estadoProyectoController',
+      controllerAs: 'estadoProyectoCtrl'
+    })
+    .state('administrador.estadoEstudiante',{
+      templateUrl: 'componentes/administrador/estadoEstudiantes/estadoEstudiante.view.html',
+      controller: 'estadoEstudianteController',
+      controllerAs: 'estadoEstudianteCtrl'
+    })
+     .state('solicitudEstudiante',{
       url: '/solicitudEstudiante',
       templateUrl: 'componentes/usuario/estudiantes/solicitudEstudiante.view.html',
       controller: 'solicitudEstudianteController',
       controllerAs: 'solicitudEstudianteCtrl'
-    })
-    .state('estadoEstudiante',{
-      url: '/estadoEstudiante',
-      templateUrl: 'componentes/usuario/estadoEstudiantes/estadoEstudiante.view.html',
-      controller: 'estadoEstudianteController',
-      controllerAs: 'estadoEstudianteCtrl'
     })
     .state('estudiantePerfil',{
       url: '/estudiantePerfil',
@@ -73,15 +83,31 @@
       controller: 'estudianteController',
       controllerAs: 'estudianteCtrl'
     })
+    .state('estudiantePerfil.calendario',{
+      templateUrl: 'componentes/usuario/estudiantes/estudiantePerfil/calendario/calendario.view.html',
+      controller: 'calendarioController',
+      controllerAs: 'calendarioCtrl'
+    })
+    .state('estudiantePerfil.reporte',{
+      templateUrl: 'componentes/usuario/estudiantes/estudiantePerfil/reporteEstudiantes/reporteEstudiantes.view.html',
+      controller: 'calendarioController',
+      controllerAs: 'calendarioCtrl'
+    })
     .state('profesorPerfil',{
       url: '/profesorPerfil',
       templateUrl: 'componentes/usuario/profesores/profesorPerfil.view.html',
       controller: 'profesorController',
       controllerAs: 'profesorCtrl'
     })
-    .state('asistente',{
+     .state('asistente',{
       url: '/asistente',
       templateUrl: 'componentes/usuario/asistente/asistente.view.html',
+      controller: 'asistenteController',
+      controllerAs: 'asistenteCtrl'
+    })
+    .state('asistente.revision',{
+      url: '/asistente',
+      templateUrl: 'componentes/usuario/asistente/asistenteRevision.view.html',
       controller: 'asistenteController',
       controllerAs: 'asistenteCtrl'
     })
@@ -97,6 +123,11 @@
      controller: 'olvidoContController',
      controllerAs: 'olvidoContCtrl'
    })
+   .state('estudiantePerfil.registrarHoras',{
+      templateUrl: 'componentes/usuario/estudiantes/estudiantePerfil/registrarHoras/registrarHoras.view.html',
+      controller: 'registrarHorasController',
+      controllerAs: 'registrarHorasCtrl'
+    })
 
         $urlRouterProvider.otherwise('/inicio');
 

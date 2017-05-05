@@ -2,7 +2,7 @@
   angular
     .module('myEnsamble')
     .controller('registrarHorasController', registrarHorasController);
-    function registrarHorasController(registrarHorasService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function registrarHorasController(estudianteService){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var registrarHorasCtrl = this; //binding del controlador con el html, solo en el controlador
       var horaI = moment();

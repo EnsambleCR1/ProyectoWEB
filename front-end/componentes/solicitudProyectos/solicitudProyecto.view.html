@@ -1,0 +1,163 @@
+<div id="empresa">
+  <div class="container-fluid" class="md-padding dialogdemoBasicUsage" id="popupContainer">
+    <div class="row">
+      <div class="col-md-6" id="bg-empresa">
+        <div class="col-md-12 text-center">
+          
+          <div class="row">
+            <div class="col-md-2">
+              <img src="componentes/imagenes/logoC.png" alt="">
+            </div>
+          </div>
+            <div class="row text-center">
+              <div>
+                <h1>Solicitud empresarial</h1>
+                <p>Hoy en día la llave del exito de una empresa viene de su apertura y conocimiento del público, poder llegar a ser siempre la primera opción.
+                Cenfotec Sofware House ofrece ideas ingeniosas, frescas y llenas de mil razones para crecer de la mano con su empresa, venga y conozca todas las opciones que podemos construir juntos!</p>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="container-fluid">
+          <form name="formularioEmpresarial" id="formRegister" novalidate>
+            <div class="row md-top">
+              <div class="col-md-6">
+                <label>Nombre del cliente o empresa:</label>
+                  <md-input-container md-padding="25px" class="md-block">
+                    
+                    <input aria-label="nombreEmpresa" required="" md-no-asterisk name="nombreEmpresa" ng-model="solicitudProyectoCtrl.nombre">
+                    <div ng-messages="formularioEmpresarial.nombreEmpresa.$error">
+                      <div ng-message-exp="'required'">Campo requerido</div>
+                      <div ng-message-exp="'pattern'">Solo se permiten letras</div>
+                    </div>
+                  </md-input-container>
+              </div>
+              <div class="col-md-6">
+                <label>Cédula cliente o empresa:</label>
+                  <md-input-container md-padding="25px" class="md-block">
+                    
+                    <input aria-label="cedulaEmpresa" required="" md-no-asterisk name="cedulaEmpresa" ng-model="solicitudProyectoCtrl.cedula" ng-pattern="/^[0-9]*$/" required>
+                    <div ng-messages="formularioEmpresarial.cedulaEmpresa.$error">
+                      <div ng-message-exp="'required'">Campo requerido</div>
+                      <div ng-message-exp="'pattern'">Solo se permiten números</div>
+                    </div>
+                  </md-input-container>
+              </div>
+            </div>    
+            <div class="row md-top">
+              <div class="col-md-6">
+               <label>Nombre del contacto:</label>
+                <md-input-container md-padding="25px" class="md-block">
+                  
+                  <input required="" aria-label="nombreContacto"  md-no-asterisk name="nombreContacto" ng-model="solicitudProyectoCtrl.nombreContacto" ng-pattern="/^[a-zA-Z ]*$/" required>
+                  <div ng-messages="formularioEmpresarial.nombreContacto.$error">
+                    <div ng-message-exp="'required'">Campo requerido</div>
+                    <div ng-message-exp="'pattern'">Solo se permiten letras</div>
+                  </div>
+                </md-input-container>
+              </div>
+              <div class="col-md-6">
+                <label>Correo de contacto:</label>
+                <md-input-container  md-padding="25px" class="md-block">
+                  
+                  <input required="" aria-label="emailContacto" md-no-asterisk type="email"  name="emailContacto" ng-model="solicitudProyectoCtrl.emailContacto" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+                  <div ng-messages="formularioEmpresarial.emailContacto.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                      Correo inválido
+                    </div>
+                  </div>
+                </md-input-container>
+              </div>
+            </div>
+            <div class="row md-top">
+                <div class="col-md-6">
+                <label>Teléfono de contacto o empresa:</label>
+                  <md-input-container md-padding="25px" class="md-block">
+                    
+                    <input required="" aria-label="telefonoContacto" md-no-asterisk name="telefonoContacto" ng-model="solicitudProyectoCtrl.telefonoContacto" ng-pattern="/^[0-9]*$/" required>
+                    <div ng-messages="formularioEmpresarial.telefonoContacto.$error">
+                      <div ng-message-exp="'required'">Campo requerido</div>
+                      <div ng-message-exp="'pattern'">Solo se permiten números</div>
+                    </div>
+                  </md-input-container>
+                </div>
+                <div class="col-md-6" >
+                  <label md-no-asterisk>Industria o sector:</label>
+                  <md-input-container md-padding="25px" class="md-block"> 
+                    <md-select aria-label="industria" required="" md-no-asterisk id="txtIndustria" style="color:#000;" name="industria" ng-model="solicitudProyectoCtrl.industria" required>
+                      <md-option value="Industria pesada">Industria pesada</md-option>
+                      <md-option value="Siderúrgicas'">Siderúrgicas</md-option>
+                      <md-option value="Metalúrgicas">Metalúrgicas</md-option>
+                      <md-option value="Cementeras">Cementeras</md-option>
+                      <md-option value="Químicas de base">Químicas de base</md-option>
+                      <md-option value="Petroquímicas">Petroquímicas</md-option>
+                      <md-option value="Automovilística">Automovilística</md-option>
+                      <md-option value="Industria ligera">Industria ligera</md-option>
+                      <md-option value="Alimentación">Alimentación</md-option>
+                      <md-option value="Aeroespacial">Aeroespacial</md-option>
+                      <md-option value="Peletera">Peletera</md-option>
+                      <md-option value="Textil">Textil</md-option>
+                      <md-option value="Farmacéutica">Farmacéutica</md-option>
+                      <md-option value="Armamentística">Armamentística</md-option>
+                      <md-option value="Industria punta">Industria punta</md-option>
+                      <md-option value="Robótica">Robótica</md-option>
+                      <md-option value="Informática">Informática</md-option>
+                      <md-option value="Astronáutica">Astronáutica</md-option>
+                      <md-option value="Mecánica">Mecánica</md-option>
+                    </md-select>
+
+                    <div ng-messages="formularioEmpresarial.industria.$error">
+                      <div ng-message-exp="'required'">Campo requerido</div>
+                    </div>
+                    </md-input-container>
+                </div> 
+            </div>
+
+               <div class="row md-top">
+                    <div class="col-md-6">
+                      <label>Foto o logo empresarial:</label>
+                      <md-input-container md-padding="25px" class="md-block ">
+                        <input required=""  aria-label="photo" id="photo" type="file" name="photo" ng-model="photo">
+                         <div ng-messages="formularioEmpresarial.photo.$error">
+                            <div ng-message="required">Campo requerido</div>
+                          </div>
+                      </md-input-container>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Resumen ejecutivo:</label>
+                       <md-input-container md-padding="25px" class="md-block">
+                        <button required="" class="btn btn-basic" value="Agregar archivo" ng-click="showPicker()" name="bio" ng-model="bio">Agregar archivo</button>
+                        <div ng-messages="formularioEmpresarial.bio.$error">
+                      </md-input-container>
+                    </div>
+                </div>
+                <div class="row md-top">
+                  <div class="container-fluid">
+                    <div class="col-md-12">
+                   <label>Descripción de su empresa</label>
+                    <md-input-container md-padding="25px" class="md-block">
+                      
+                      <input required="" aria-label="descripcion" md-no-asterisk name="descripcion" ng-model="solicitudProyectoCtrl.descripcion">
+                      <div ng-messages="formularioEmpresarial.descripcion.$error">
+                        <div ng-message-exp="'required'">Campo requerido</div>
+                        <div ng-message-exp="'pattern'">Solo se permiten letras</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  </div>
+                </div>
+            <div class="row md-top">
+              <div class="">
+                <div class="dialog-demo-content" layout-wrap="" layout-margin="" >
+                  <md-button class="col-md-offset-4 col-md-3 btn btn-warning" ng-click="solicitudProyectoCtrl.presave(formularioEmpresarial)">Enviar solicitud</md-button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

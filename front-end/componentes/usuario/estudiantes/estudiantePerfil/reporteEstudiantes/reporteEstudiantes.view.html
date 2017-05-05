@@ -1,0 +1,35 @@
+<md-toolbar>
+  <h2 class="md-toolbar-tools md-center col-md-offset-3 col-md-9">
+    <span>Reportes</span>
+  </h2>
+</md-toolbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <md-tabs class="col-md-offset-2 col-md-10" id="tabs-reportes" class="md-padding">
+
+      <md-tab class="tab-estadoEstudiantes" label="Estudiantes Cenfotec Software House" id="EstudiantesCenfotec">
+        <md-content>
+          <div id="bloque-profesor" ng-repeat="pobjEstudiante in reporteEstCtrl.solicitudEstudiantes">
+            <p ng-model="reporteEstCtrl.solicitudEstudiantes" value="{{pobjEstudiante.nombreEstudiante}} {{pobjEstudiante.apellido1Estudiante}} {{pobjEstudiante.apellido2Estudiante}} ">Nombre completo: {{pobjEstudiante.nombreEstudiante}} {{pobjEstudiante.apellido1Estudiante}} {{pobjEstudiante.apellido2Estudiante}}</p>
+            <p  ng-model="reporteEstCtrl.solicitudEstudiantes" value="{{pobjEstudiante.foto}}">Foto: <img src="{{pobjEstudiante.foto}}" width="100px" height="100px"></p>
+          </div>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab class="tab-estadoProfesores" label="Profesores Cenfotec Software House" id="ProfesoresCenfotec">
+        <md-content>
+          <div id="bloque-profesor" ng-repeat="pobjProfesor in reporteEstCtrl.profesores">
+            <p ng-model="reporteEstCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}} ">Nombre completo: {{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</p>
+            <p ng-model="reporteEstCtrl.profesores" value=" {{pobjProfesor.especialidad}}">
+            Especialidad: {{pobjProfesor.especialidad}}</p>
+          </div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </div>
+</div>
+ 
+<div ui-view></div>

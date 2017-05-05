@@ -3,6 +3,7 @@ var Carrera = require('../models/carrera.model');
 var Curso = require('../models/curso.model');
 var Profesor = require('../models/profesor.model');
 var config = require('../config/database');
+var SolicitudProyecto = require('../models/solicitudProyecto.model');
 
 module.exports = function(passport){
   var opts = {};
@@ -37,6 +38,28 @@ module.exports = function(passport){
       }
       if(profesor){
         done(null,profesor);
+      }else{
+        done(null,false);
+      }
+    });
+
+     SolicitudProyecto.find({id:jwt_payload.sub},function(err,solicitudProyecto){
+      if(err){
+        return done(err,false);
+      }
+      if(solicitudProyecto){
+        done(null,solicitudProyecto);
+      }else{
+        done(null,false);
+      }
+    });
+
+     SolicitudEstudiante.find({id:jwt_payload.sub},function(err,solicitudEstudiante){
+      if(err){
+        return done(err,false);
+      }
+      if(solicitudEstudiante){
+        done(null,solicitudEstudiante);
       }else{
         done(null,false);
       }

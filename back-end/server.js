@@ -11,7 +11,9 @@ var connection = config.database;
 carreraRoutes = require('./api/components/carreras/carrera.route');
 cursoRoutes = require('./api/components/cursos/curso.route');
 profesorRoutes = require('./api/components/profesores/profesor.route');
-
+solicitudProyectoRoutes = require('./api/components/solicitudProyectos/solicitudProyecto.route');
+usuarioRoutes = require('./api/components/usuarios/usuario.route');
+solicitudEstudianteRoutes = require('./api/components/solicitudEstudiantes/solicitudEstudiante.route');
 
 var app = express();
 app.use(express.static(__dirname + "/client"));//maneja archivos estáticos como un app web
@@ -68,3 +70,6 @@ function handleError(res, reason, message, code) {
 app.use('/api', carreraRoutes);//se define el versionamiento del api
 app.use('/api', cursoRoutes);//se define el versionamiento del api
 app.use('/api', profesorRoutes);
+app.use('/api', usuarioRoutes);
+app.use('/api', solicitudProyectoRoutes);//se define el versionamiento del api
+app.use('/api', solicitudEstudianteRoutes);

@@ -1,0 +1,54 @@
+<md-toolbar>
+  <h2 class="md-toolbar-tools md-center col-md-offset-3 col-md-9">
+    <span>Reportes</span>
+  </h2>
+</md-toolbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <md-tabs class="col-md-offset-3 col-md-9" id="tabs-reportes" class="md-padding">
+
+      <md-tab class="tab-estadoEstudiantes" label="Estudiantes Cenfotec Software House" id="EstudiantesCenfotec">
+        <md-content>
+          <div id="bloque-profesor" ng-repeat="pobjEstudiante in reporteCtrl.solicitudEstudiantes">
+            <p ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstudiante.nombreEstudiante}} {{pobjEstudiante.apellido1Estudiante}} {{pobjEstudiante.apellido2Estudiante}} ">Nombre completo: {{pobjEstudiante.nombreEstudiante}} {{pobjEstudiante.apellido1Estudiante}} {{pobjEstudiante.apellido2Estudiante}}</p>
+            <p  ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstudiante.foto}}">Foto: <img src="{{pobjEstudiante.foto}}" width="100px" height="100px"></p>
+             <p ng-model="reporteCtrl.solicitudEstudiantes" value="{{pobjEstudiante.estado}}">Estado: {{pobjEstudiante.estado}}</p>
+          </div>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab class="tab-estadoProfesores" label="Profesores Cenfotec Software House" id="ProfesoresCenfotec">
+        <md-content>
+          <div id="bloque-profesor" ng-repeat="pobjProfesor in reporteCtrl.profesores">
+            <p ng-model="reporteCtrl.profesores" value="{{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}} ">Nombre completo: {{pobjProfesor.nombre}} {{pobjProfesor.primerApellido}} {{pobjProfesor.segundoApellido}}</p>
+            <p ng-model="reporteCtrl.profesores" value=" {{pobjProfesor.especialidad}}">
+            Especialidad: {{pobjProfesor.especialidad}}</p>
+             <p ng-model="reporteCtrl.profesores" value="{{pobjProfesor.estado}}">
+            Estado: {{pobjProfesor.estado}}</p>
+          </div>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab class="tab-estadoProyectos" label="Proyectos Cenfotec Software House" id="ProyectosCenfotec">
+        <md-content>
+          <div id="bloque-profesor" ng-repeat="pobjProyecto in reporteCtrl.solicitudProyectos">
+            <p ng-model="reporteCtrl.solicitudProyectos" value="{{pobjProyecto.nombre}}">Nombre empresa: {{pobjProyecto.nombre}}</p>
+            <p ng-model="reporteCtrl.solicitudProyectos" value="{{pobjProyecto.nombreContacto}}">Nombre empresa: {{pobjProyecto.nombreContacto}}</p>
+            <p ng-model="reporteCtrl.solicitudProyectos" value=" {{pobjProyecto.emailContacto}}">
+            Email contacto: {{pobjProyecto.emailContacto}}</p>
+             <p ng-model="reporteCtrl.solicitudProyectos" value="{{pobjProyecto.estado}}">
+            Estado: {{pobjProyecto.estado}}</p>
+            <p ng-model="reporteCtrl.solicitudProyectos" value="{{pobjProyecto.bitacoras}}">
+            Bitácoras: {{pobjProyecto.bitacoras}}</p>
+          </div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </div>
+</div>
+
+<div ui-view></div>

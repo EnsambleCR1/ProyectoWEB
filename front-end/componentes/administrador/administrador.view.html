@@ -3,10 +3,7 @@
   <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
 
     <md-toolbar class="md-theme-indigo">
-
-
         <h1 class="md-toolbar-tools">  <i class="fa fa-user-o" aria-hidden="true"></i>Administrador</h1>
-
     </md-toolbar>
 
     <md-content layout-margin>
@@ -14,9 +11,10 @@
       <ul>
         <li><button class="sesion" layout-align="center end" ui-sref="administrador.carrera"> Administrar carreras </button></li>
         <li><button class="sesion" layout-align="center end" ui-sref="administrador.curso"> Administrar cursos </button></li>
-        <li><button class="sesion" layout-align="center end" ui-sref="administrador.profesor"> Profesores </button></li>
-        <li><button class="sesion" layout-align="center end" ui-sref="proyectos">Proyectos</button></li>
-        <li><button class="sesion" layout-align="center end" ui-sref="estadoEstudiante">Estudiantes</button></li>
+        <li><button class="sesion" layout-align="center end" ui-sref="administrador.profesor">Profesores </button></li>
+        <li><button class="sesion" layout-align="center end" ui-sref="administrador.estadoProyecto">Estado proyectos</button></li>
+        <li><button class="sesion" layout-align="center end" ui-sref="administrador.estadoEstudiante">Estado estudiantes</button></li>
+        <li><button class="sesion" layout-align="center end" ui-sref="administrador.reporte">Reportes</button></li>
       </ul>
 
       <button ng-click="toggleLeft()" class="btn-primary">
@@ -40,15 +38,7 @@
 
           <div class="icono">
             <i class="fa fa-bell-o" aria-hidden="true"></i>
-            <button  class="session" layout-align="center end"> Notificaciones</button>
-          </div>
-          <div class="icono">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-            <button  class="session" layout-align="center end"> Calendario</button>
-          </div>
-          <div class="icono">
-            <i class="fa fa-cog" aria-hidden="true"></i>
-            <button  class="session" layout-align="center end"> Opciones</button>
+            <button  class="session" layout-align="center end" ng-click="warningTitle()"> Notificaciones</button>
           </div>
           <div class="icono">
             <i class="fa fa-power-off" aria-hidden="true"></i>
